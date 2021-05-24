@@ -30,16 +30,29 @@ function setup() {
    cars = new Car (2)
    carGroup1.add(cars.spt)
  }
-
- for(i=1; i<logGroup1.length; i++){
-if (logGroup1[i].x<0){
-logGroup1[i].x= width
-}
+ for(var i=0; i<40; i++){
+   logs = new Log(2)
+   logGroup1.add(logs.spt)
  }
+
+
  }
 
 function draw() {
   background("skyblue");
+  for(i=1; i<logGroup1.length; i++){
+if (logGroup1[i].x<0){
+logGroup1[i].x= width
+}
+ }
+  for(i=1; i<carGroup1.length; i++){
+if (carGroup1[i].x<0){
+carGroup1[i].x= width
+}
+   if (carGroup1[i].x>width){
+carGroup1[i].x= 0
+}
+ }
  
  
 
